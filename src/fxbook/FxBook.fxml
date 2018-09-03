@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxbook.FxBookBean">
+   <children>
+      <SplitPane fx:id="paneAna" dividerPositions="0.29734848484848486" layoutX="8.0" layoutY="6.0" prefHeight="888.0" prefWidth="1586.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="886.0" prefWidth="513.0">
+               <children>
+                  <TreeView fx:id="fxTreeView" editable="true" fixedCellSize="0.0" layoutY="32.0" prefHeight="434.0" prefWidth="469.0" styleClass="myTree" stylesheets="@common.css" />
+                  <TabPane layoutX="-2.0" layoutY="468.0" prefHeight="404.0" prefWidth="469.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab text="Kitap">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="369.0" prefWidth="469.0">
+                                 <children>
+                                    <Label layoutX="13.0" layoutY="46.0" prefHeight="25.0" prefWidth="74.0" text="Yazar         :" />
+                                    <Label layoutX="13.0" layoutY="11.0" prefHeight="25.0" prefWidth="74.0" text="Kitap          :" />
+                                    <TextField fx:id="fxKitapAdi" layoutX="89.0" layoutY="11.0" prefHeight="25.0" prefWidth="367.0" />
+                                    <TextField fx:id="fxYazarAdi" layoutX="89.0" layoutY="45.0" prefHeight="25.0" prefWidth="367.0" />
+                                    <TextField fx:id="fxOrjinalAdi" layoutX="89.0" layoutY="79.0" prefHeight="25.0" prefWidth="367.0" />
+                                    <TextField fx:id="fxSeriAdi" layoutX="89.0" layoutY="113.0" prefHeight="25.0" prefWidth="367.0" />
+                                    <TextField fx:id="fxSeriNo" layoutX="89.0" layoutY="147.0" prefHeight="25.0" prefWidth="367.0" />
+                                    <TextField fx:id="fxYayinciAdi" layoutX="89.0" layoutY="181.0" prefHeight="25.0" prefWidth="367.0" />
+                                    <TextField fx:id="fxBaski" layoutX="89.0" layoutY="214.0" prefHeight="25.0" prefWidth="367.0" />
+                                    <TextField fx:id="fxCeviriAdi" layoutX="89.0" layoutY="248.0" prefHeight="25.0" prefWidth="367.0" />
+                                    <Label layoutX="13.0" layoutY="79.0" prefHeight="25.0" prefWidth="74.0" text="Orjinal Adı  :" />
+                                    <Label layoutX="13.0" layoutY="113.0" prefHeight="25.0" prefWidth="74.0" text="Seri             :" />
+                                    <Label layoutX="13.0" layoutY="147.0" prefHeight="25.0" prefWidth="74.0" text="Seri  No      :" />
+                                    <Label layoutX="13.0" layoutY="181.0" prefHeight="25.0" prefWidth="74.0" text="Yayıncı       :" />
+                                    <Label layoutX="13.0" layoutY="214.0" prefHeight="25.0" prefWidth="74.0" text="Baskı Yılı    :" />
+                                    <Label layoutX="13.0" layoutY="248.0" prefHeight="25.0" prefWidth="74.0" text="Çeviri         :" />
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                        <Tab fx:id="tabEkle" text="Ekle Düzenle">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="382.0" prefWidth="469.0">
+                                 <children>
+                                    <Label layoutX="13.0" layoutY="46.0" prefHeight="25.0" prefWidth="74.0" text="Yazar *        :" />
+                                    <Label layoutX="13.0" layoutY="11.0" prefHeight="25.0" prefWidth="74.0" text="Kitap *         :" />
+                                    <TextField fx:id="ynKitapAdi" layoutX="89.0" layoutY="11.0" prefHeight="25.0" prefWidth="367.0" />
+                                    <TextField fx:id="ynOrjinalAdi" layoutX="89.0" layoutY="79.0" prefHeight="25.0" prefWidth="367.0" />
+                                    <TextField fx:id="ynSeriNo" layoutX="89.0" layoutY="147.0" prefHeight="25.0" prefWidth="367.0" />
+                                    <TextField fx:id="ynBaski" layoutX="89.0" layoutY="214.0" prefHeight="25.0" prefWidth="367.0" />
+                                    <Label layoutX="13.0" layoutY="79.0" prefHeight="25.0" prefWidth="74.0" text="Orjinal Adı  :" />
+                                    <Label layoutX="13.0" layoutY="113.0" prefHeight="25.0" prefWidth="74.0" text="Seri             :" />
+                                    <Label layoutX="13.0" layoutY="147.0" prefHeight="25.0" prefWidth="74.0" text="Seri  No      :" />
+                                    <Label layoutX="13.0" layoutY="181.0" prefHeight="25.0" prefWidth="74.0" text="Yayıncı       :" />
+                                    <Label layoutX="13.0" layoutY="214.0" prefHeight="25.0" prefWidth="74.0" text="Baskı Yılı    :" />
+                                    <Label layoutX="13.0" layoutY="248.0" prefHeight="25.0" prefWidth="74.0" text="Çeviri         :" />
+                                    <ComboBox fx:id="ynYazarCombo" layoutX="89.0" layoutY="46.0" onAction="#yazarComboChange" prefHeight="25.0" prefWidth="367.0" />
+                                    <ComboBox fx:id="ynSeriCombo" layoutX="89.0" layoutY="113.0" onAction="#seriComboChange" prefHeight="25.0" prefWidth="367.0" />
+                                    <ComboBox fx:id="ynYayinciCombo" layoutX="89.0" layoutY="181.0" onAction="#yayinciComboChange" prefHeight="25.0" prefWidth="367.0" />
+                                    <ComboBox fx:id="ynCeviriCombo" layoutX="89.0" layoutY="248.0" onAction="#ceviriComboChange" prefHeight="25.0" prefWidth="367.0" />
+                                    <ToggleButton fx:id="dznTgl" layoutX="172.0" layoutY="337.0" maxHeight="25.0" maxWidth="80.0" minHeight="25.0" minWidth="80.0" mnemonicParsing="false" onAction="#tglGrpSec" prefHeight="25.0" prefWidth="80.0" selected="true" text="Düzenle">
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="tglGrp" />
+                                       </toggleGroup>
+                                    </ToggleButton>
+                                    <ToggleButton fx:id="ekTgl" layoutX="89.0" layoutY="337.0" maxHeight="25.0" maxWidth="80.0" minHeight="25.0" minWidth="80.0" mnemonicParsing="false" onAction="#tglGrpSec" prefHeight="25.0" prefWidth="80.0" text="Ekle" toggleGroup="$tglGrp" />
+                                    <Button fx:id="ktpKayit" layoutX="259.0" layoutY="337.0" mnemonicParsing="false" onAction="#masterKayit" prefHeight="25.0" prefWidth="80.0" text="Kaydet" />
+                                    <Label layoutX="13.0" layoutY="273.0" prefHeight="25.0" prefWidth="74.0" text="Açıklama   :" />
+                                    <TextArea fx:id="ynAciklama" layoutX="89.0" layoutY="279.0" prefHeight="53.0" prefWidth="367.0" wrapText="true" />
+                                    <Button fx:id="ktpEkle" layoutX="347.0" layoutY="337.0" mnemonicParsing="false" onAction="#dosyaEkle" prefHeight="25.0" prefWidth="99.0" text="Dosya Ekle" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab fx:id="tabYeni" onSelectionChanged="#yzrCnsytSec" text="Yeni">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="171.0" prefWidth="307.0">
+                                 <children>
+                                    <TabPane layoutX="13.0" layoutY="13.0" prefHeight="353.0" prefWidth="443.0" tabClosingPolicy="UNAVAILABLE">
+                                      <tabs>
+                                        <Tab text="Yazar">
+                                          <content>
+                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="352.0" prefWidth="443.0">
+                                                   <children>
+                                                      <TextField fx:id="ekYazarAdi" layoutX="90.0" layoutY="13.0" prefHeight="25.0" prefWidth="340.0" />
+                                                      <Label layoutX="13.0" layoutY="13.0" prefHeight="25.0" prefWidth="74.0" text="Yazar   " />
+                                                      <Label layoutX="13.0" layoutY="54.0" prefHeight="25.0" prefWidth="74.0" text="Hakkında" />
+                                                      <TextArea fx:id="ekYazarNot" layoutX="13.0" layoutY="82.0" prefHeight="209.0" prefWidth="416.0" wrapText="true" />
+                                                      <ToggleButton fx:id="yzrErk" layoutX="260.0" layoutY="48.0" maxHeight="25.0" maxWidth="80.0" minHeight="25.0" minWidth="80.0" mnemonicParsing="false" onAction="#yzrCnsytErkek" prefHeight="25.0" prefWidth="80.0" selected="true" text="Erkek">
+                                                         <toggleGroup>
+                                                            <ToggleGroup fx:id="yzrCinsGrp" />
+                                                         </toggleGroup>
+                                                      </ToggleButton>
+                                                      <ToggleButton fx:id="yzrKdn" layoutX="347.0" layoutY="48.0" maxHeight="25.0" maxWidth="80.0" minHeight="25.0" minWidth="80.0" mnemonicParsing="false" onAction="#yzrCnsytKadin" prefHeight="25.0" prefWidth="80.0" text="Kadın" toggleGroup="$yzrCinsGrp" />
+                                                      <Button fx:id="yzrKayit" layoutX="350.0" layoutY="291.0" mnemonicParsing="false" onAction="#yazarKyt" prefHeight="25.0" prefWidth="80.0" text="Kaydet" />
+                                                   </children>
+                                                </AnchorPane>
+                                          </content>
+                                        </Tab>
+                                        <Tab text="Seri">
+                                          <content>
+                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                   <children>
+                                                      <Label layoutX="13.0" layoutY="13.0" prefHeight="25.0" prefWidth="64.0" text="Seri        " />
+                                                      <TextField fx:id="ekSeriAdi" layoutX="90.0" layoutY="13.0" prefHeight="25.0" prefWidth="340.0" />
+                                                      <TextArea fx:id="ekSeriNot" layoutX="13.0" layoutY="82.0" prefHeight="209.0" prefWidth="416.0" />
+                                                      <Label layoutX="13.0" layoutY="54.0" prefHeight="25.0" prefWidth="74.0" text="Hakkında" />
+                                                      <Button fx:id="seriKayit" layoutX="349.0" layoutY="291.0" mnemonicParsing="false" onAction="#insrtSeriKyt" prefHeight="25.0" prefWidth="80.0" text="Kaydet" />
+                                                   </children>
+                                                </AnchorPane>
+                                          </content>
+                                        </Tab>
+                                          <Tab text="Yayıncı">
+                                             <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                   <children>
+                                                      <Label layoutX="13.0" layoutY="13.0" prefHeight="25.0" prefWidth="64.0" text="Yayıncı" />
+                                                      <TextField fx:id="ekYayinciAdi" layoutX="90.0" layoutY="13.0" prefHeight="25.0" prefWidth="340.0" />
+                                                      <TextArea fx:id="ekYayinciNot" layoutX="13.0" layoutY="82.0" prefHeight="209.0" prefWidth="416.0" />
+                                                      <Label layoutX="13.0" layoutY="54.0" prefHeight="25.0" prefWidth="74.0" text="Hakkında" />
+                                                      <Button fx:id="yayinciKayit" layoutX="350.0" layoutY="291.0" mnemonicParsing="false" onAction="#insrtYayinciKyt" prefHeight="25.0" prefWidth="80.0" text="Kaydet" />
+                                                   </children>
+                                                </AnchorPane>
+                                             </content>
+                                          </Tab>
+                                          <Tab text="Çeviri">
+                                             <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                   <children>
+                                                      <Label layoutX="13.0" layoutY="13.0" prefHeight="25.0" prefWidth="64.0" text="Çeviri" />
+                                                      <TextField fx:id="ekCeviriAdi" layoutX="90.0" layoutY="13.0" prefHeight="25.0" prefWidth="340.0" />
+                                                      <TextArea fx:id="ekCeviriNot" layoutX="13.0" layoutY="82.0" prefHeight="209.0" prefWidth="416.0" />
+                                                      <Label layoutX="13.0" layoutY="54.0" prefHeight="25.0" prefWidth="74.0" text="Hakkında" />
+                                                      <Button fx:id="cevriKayit" layoutX="350.0" layoutY="291.0" mnemonicParsing="false" onAction="#insrtCeviriKyt" prefHeight="25.0" prefWidth="80.0" text="Kaydet" />
+                                                   </children>
+                                                </AnchorPane>
+                                             </content>
+                                          </Tab>
+                                      </tabs>
+                                    </TabPane>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                    </tabs>
+                  </TabPane>
+                  <ComboBox fx:id="fxDrwr" layoutX="65.0" layoutY="2.0" onAction="#drwUpdate" prefHeight="25.0" prefWidth="70.0" />
+                  <Label layoutX="4.0" layoutY="7.0" prefHeight="17.0" prefWidth="50.0" text="Sürücü:" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="886.0" prefWidth="1088.0">
+               <children>
+                  <SplitPane fx:id="paneCld" dividerPositions="0.5668849391955099" layoutX="1.0" layoutY="1.0" prefHeight="888.0" prefWidth="1110.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="-2.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <TextArea fx:id="fxAciklama" layoutX="-6.0" layoutY="-1.0" prefHeight="879.0" prefWidth="631.0" wrapText="true">
+                                 <font>
+                                    <Font name="Arial" size="16.0" />
+                                 </font></TextArea>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <TableView fx:id="fxDosyaTable" layoutX="3.0" layoutY="580.0" onMouseClicked="#fxTableKitapSelected" prefHeight="292.0" prefWidth="468.0">
+                                <columns>
+                                  <TableColumn fx:id="fxDosyaColAdi" prefWidth="200.0" text="Dosya İsmi" />
+                                  <TableColumn fx:id="fxDosyaColDgsTarihi" prefWidth="146.0" text="Değişim Tarihi" />
+                                    <TableColumn fx:id="fxDosyaColBoyut" prefWidth="68.0" text="Boyut" />
+                                    <TableColumn fx:id="fxDosyaColBirim" prefWidth="52.0" text="Brim" />
+                                    <TableColumn fx:id="fxDosyaColOpen" minWidth="0.0" prefWidth="0.0" text="Open" />
+                                </columns>
+                              </TableView>
+                              <ImageView fx:id="fxImage" fitHeight="555.0" fitWidth="477.0" layoutX="-1.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" />
+                              <Label fx:id="clickedPair" alignment="CENTER" contentDisplay="CENTER" layoutX="3.0" layoutY="560.0" prefHeight="21.0" prefWidth="468.0" style="-fx-font-size: 14; -fx-font-weight: 900;" text="KÜTÜPHANEDEKİ KİTAPLAR" textAlignment="CENTER" />
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+          </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
